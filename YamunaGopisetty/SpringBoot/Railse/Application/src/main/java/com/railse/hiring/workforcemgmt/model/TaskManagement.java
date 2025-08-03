@@ -1,0 +1,30 @@
+package com.railse.hiring.workforcemgmt.model;
+
+import java.util.ArrayList;
+import java.util.List;
+import com.railse.hiring.workforcemgmt.common.model.enums.ReferenceType;
+import com.railse.hiring.workforcemgmt.model.enums.Priority;
+import com.railse.hiring.workforcemgmt.model.enums.Task;
+import com.railse.hiring.workforcemgmt.model.enums.TaskStatus;
+import lombok.Data;
+import lombok.Getter;
+
+@Data
+@Getter
+
+public class TaskManagement {
+	
+	   private Long id;
+	   private Long referenceId;
+	   private ReferenceType referenceType;
+	   private Task task;
+	   private String description;
+	   private TaskStatus status;
+	   private Long assigneeId; // Simplified from Entity for this assignment
+	   private Long taskDeadlineTime;
+	   private Priority priority;
+	   
+	   private List<TaskComment> comments = new ArrayList<>();
+	   private List<TaskActivity> activityHistory = new ArrayList<>();
+
+}
